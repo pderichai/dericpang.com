@@ -1,11 +1,12 @@
-import { getAllPostIds, getPostData } from "../../lib/posts";
 import path from "path";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
 import rehypeImgSize from "rehype-img-size";
-import Head from "next/head";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
+
+import Layout from "../../components/layout";
 import Date from "../../components/date";
+import { getAllPostIds, getPostData } from "../../lib/posts";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -40,6 +41,11 @@ const MyP = (props) => (
     {props.children}
   </p>
 );
+const MyA = (props) => (
+  <a className="post" {...props}>
+    {props.children}
+  </a>
+);
 const MyCode = (props) => (
   <code className="post" {...props}>
     {props.children}
@@ -70,6 +76,7 @@ const components = {
   h1: MyH1,
   h2: MyH2,
   p: MyP,
+  a: MyA,
   code: MyCode,
   pre: MyPre,
   ol: MyOl,
@@ -79,10 +86,7 @@ const components = {
 
 export default function Post({ mdxSource, ...postData }) {
   return (
-    <>
-      <Head>
-        <title>{postData.title} | Deric Pang</title>
-      </Head>
+    <Layout title={postData.title} description={postData.description}>
       <h2 className="post-title">{postData.title}</h2>
       <p className="post-date">
         <Date dateString={postData.date} />
@@ -103,6 +107,6 @@ export default function Post({ mdxSource, ...postData }) {
         </div>
       )}
       <MDXRemote {...mdxSource} components={components} />
-    </>
+    </Layout>
   );
 }

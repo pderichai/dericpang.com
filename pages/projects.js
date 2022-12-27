@@ -1,6 +1,7 @@
 import React from "react";
 import useSWR from "swr";
-import Head from "next/head";
+
+import Layout from "../components/layout";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -15,10 +16,7 @@ function ProjectsPage() {
   const projects = JSON.parse(data);
 
   return (
-    <>
-      <Head>
-        <title>Projects | Deric Pang</title>
-      </Head>
+    <Layout title="Projects">
       <ul className="projects">
         {projects.map((project) => (
           <li key={project.name}>
@@ -38,7 +36,7 @@ function ProjectsPage() {
           </li>
         ))}
       </ul>
-    </>
+    </Layout>
   );
 }
 

@@ -1,22 +1,12 @@
-//import Layout from '../components/Layout';
-// import resume from '../src/assets/pdfs/resume.pdf';
-//import Seo from '../components/Seo';
-//
-//import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image';
-//import { graphql, useStaticQuery } from 'gatsby';
-//import React from 'react';
-
 import Link from "next/link";
 import Image from "next/image";
+
+import Layout from "../components/layout";
 import headshotImage from "../public/headshot.png";
-import Head from "next/head";
 
 function HomePage() {
   return (
-    <>
-      <Head>
-        <title>Deric Pang</title>
-      </Head>
+    <Layout>
       <div className="about">
         <div className="about-text">
           <div>
@@ -76,7 +66,7 @@ function HomePage() {
           />
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
 

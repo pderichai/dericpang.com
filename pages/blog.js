@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import { getSortedPostsData } from "../lib/posts";
-import Head from "next/head";
+
+import Layout from "../components/layout";
 import Date from "../components/date";
+import { getSortedPostsData } from "../lib/posts";
 
 export async function getStaticProps() {
   const allPostsDataString = getSortedPostsData();
@@ -22,10 +23,7 @@ function Blog({ allPostsDataString }) {
   const allPostsData = JSON.parse(allPostsDataString);
 
   return (
-    <>
-      <Head>
-        <title>Blog | Deric Pang</title>
-      </Head>
+    <Layout title="Blog">
       <ul className="publications">
         {allPostsData.map((postData) => (
           <li key={postData.title}>
@@ -36,7 +34,7 @@ function Blog({ allPostsDataString }) {
           </li>
         ))}
       </ul>
-    </>
+    </Layout>
   );
 }
 

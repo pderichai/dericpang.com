@@ -73,6 +73,24 @@ nav li {
 @media (max-width: 64.25em) {
   nav li {
     display: list-item;
+    margin-bottom: 0.5rem;
+
+    a {
+      min-height: 3rem;
+      min-width: 3rem;
+    }
+  }
+
+  nav,
+  .social-links {
+    li {
+      margin-bottom: 0.5rem;
+
+      a {
+        min-height: 3rem;
+        min-width: 3rem;
+      }
+    }
   }
 }
 
