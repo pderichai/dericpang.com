@@ -1,11 +1,11 @@
-import { getAllPostIds, getPostData } from '../../lib/posts';
-import path from 'path';
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
-import Image from 'next/image'
-import rehypeImgSize from 'rehype-img-size';
-import Head from 'next/head';
-import Date from '../../components/date';
+import { getAllPostIds, getPostData } from "../../lib/posts";
+import path from "path";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
+import Image from "next/image";
+import rehypeImgSize from "rehype-img-size";
+import Head from "next/head";
+import Date from "../../components/date";
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
@@ -19,7 +19,7 @@ export async function getStaticProps({ params }) {
   const { postContent, ...postData } = getPostData(params.id);
   const mdxSource = await serialize(postContent, {
     mdxOptions: {
-      rehypePlugins: [[rehypeImgSize, { dir: 'public' }]],
+      rehypePlugins: [[rehypeImgSize, { dir: "public" }]],
     },
   });
   return { props: { mdxSource, ...postData } };
@@ -61,7 +61,7 @@ const MyUl = (props) => (
   </ul>
 );
 const MyImg = (props) => (
-  <Image className='post' alt='' {...props}>
+  <Image className="post" alt="" {...props}>
     {props.children}
   </Image>
 );
@@ -80,27 +80,29 @@ const components = {
 export default function Post({ mdxSource, ...postData }) {
   return (
     <>
-    <Head>
-      <title>{postData.title} | Deric Pang</title>
-    </Head>
-    <h2 className='post-title'>{postData.title}</h2>
-      <p className='post-date'><Date dateString={postData.date} /></p>
-    {postData.lastUpdated && (
-      <p className='last-updated-date'>
-        Last updated on <Date dateString={postData.lastUpdated} />
+      <Head>
+        <title>{postData.title} | Deric Pang</title>
+      </Head>
+      <h2 className="post-title">{postData.title}</h2>
+      <p className="post-date">
+        <Date dateString={postData.date} />
       </p>
-    )}
-    {postData.featuredImage && (
-      <div className='post-featured-image'>
-        <Image
-          src={featuredImage}
-          alt={postData.featuredImageAltText}
-          className='post-featured-image-img'
-          priority
-        />
-      </div>
-    )}
-    <MDXRemote {...mdxSource} components={components} />
+      {postData.lastUpdated && (
+        <p className="last-updated-date">
+          Last updated on <Date dateString={postData.lastUpdated} />
+        </p>
+      )}
+      {postData.featuredImage && (
+        <div className="post-featured-image">
+          <Image
+            src={featuredImage}
+            alt={postData.featuredImageAltText}
+            className="post-featured-image-img"
+            priority
+          />
+        </div>
+      )}
+      <MDXRemote {...mdxSource} components={components} />
     </>
   );
 }

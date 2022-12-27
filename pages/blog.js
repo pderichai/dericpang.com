@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import { getSortedPostsData } from '../lib/posts';
-import Head from 'next/head';
-import Date from '../components/date';
+import React from "react";
+import Link from "next/link";
+import { getSortedPostsData } from "../lib/posts";
+import Head from "next/head";
+import Date from "../components/date";
 
 export async function getStaticProps() {
   const allPostsDataString = getSortedPostsData();
@@ -26,14 +26,16 @@ function Blog({ allPostsDataString }) {
       <Head>
         <title>Blog | Deric Pang</title>
       </Head>
-    <ul className='publications'>
-      {allPostsData.map(postData => (
-        <li key={postData.title}>
-          <Link href={'/blog/' + postData.postName}>{postData.title}</Link>
-          <p><Date dateString={postData.date} /></p>
-        </li>
-      ))}
-    </ul>
+      <ul className="publications">
+        {allPostsData.map((postData) => (
+          <li key={postData.title}>
+            <Link href={"/blog/" + postData.postName}>{postData.title}</Link>
+            <p>
+              <Date dateString={postData.date} />
+            </p>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

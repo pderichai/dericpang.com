@@ -22,20 +22,27 @@ I wanted to:
 Let's start by tracking your `.bashrc`:
 
 1. Set up a git repository for your dotfiles:
+
 ```shell
 $ mkdir ~/dotfiles
 $ cd ~/dotfiles && git init
 ```
+
 2. Move your `.bashrc` to `~/dotfiles/`. Make sure to omit the `.` so it's not
    hidden in your repo:
+
 ```shell
 $ mv ~/.bashrc ~/dotfiles/bashrc
 ```
+
 3. Create a Makefile.
+
 ```shell
 $ touch ~/dotfiles/Makefile
 ```
+
 4. Put this inside `~/dotfiles/Makefile`:[^1]
+
 ```make
 pwd := $(shell pwd -LP)
 .PHONY: bash
@@ -43,11 +50,15 @@ all: bash
 bash:
         @ln -nfs "${pwd}/bashrc" ~/.bashrc
 ```
+
 5. Install your dotfiles:
+
 ```shell
 $ make all
 ```
+
 6. After creating a new repo on GitHub, push your dotfiles:
+
 ```shell
 $ git add .
 $ git commit -m"Tracking my dotfiles."
@@ -65,10 +76,13 @@ your Git config:
 
 1. Move your `.gitconfig` to `~/dotfiles/`. Again, make sure to omit the `.` so
    it's not hidden:
+
 ```shell
 $ mv ~/.gitconfig ~/dotfiles/gitconfig
 ```
+
 2. Update `~/dotfiles/Makefile` to be:
+
 ```make
 pwd := $(shell pwd -LP)
 .PHONY: bash git
@@ -78,7 +92,9 @@ bash:
 git:
         @ln -nfs "${pwd}/gtconfig" ~/.gitconfig
 ```
+
 3. Install your dotfiles:
+
 ```shell
 $ make all
 ```

@@ -28,6 +28,7 @@
   "devDependencies": {
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "eslint-config-prettier": "latest",
     "gh-pages": "latest",
     "prettier": "latest",
     "sass": "latest"
