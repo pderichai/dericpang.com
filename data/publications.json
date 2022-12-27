@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Improving Natural Language Inference with a Pretrained Parser",
+    "venue": "arXiv Preprint, 2019",
+    "author": "Deric Pang, Lucy H. Lin, and Noah A. Smith",
+    "pdf_link": "https://arxiv.org/pdf/1909.08217.pdf",
+    "code_link": "https://github.com/pderichai/syntactic-entailment"
+  },
+  {
+    "title": "Improving Natural Language Inference with Syntactic Word Embeddings",
+    "venue": "Master's Thesis, University of Washington, 2019",
+    "author": "Deric Pang",
+    "pdf_link": "/ms-thesis.pdf",
+    "code_link": "https://github.com/pderichai/syntactic-entailment"
+  },
+  {
+    "title": "Program Synthesis from Natural Language Using Recurrent Neural Networks",
+    "venue": "Technical Report, University of Washington, 2017",
+    "author": "Xi Victoria Lin, Chenglong Wang, Deric Pang, Kevin Lu, Luke Zettlemoyer, and Michael D. Ernst",
+    "pdf_link": "/tellina-tr170510.pdf",
+    "code_link": "https://github.com/TellinaTool/nl2bash",
+    "demo_link": "http://tellina.rocks"
+  },
+  {
+    "title": "Evaluating and improving fault localization",
+    "venue": "ICSE 2017",
+    "author": "Spencer Pearson, José Campos, René Just, Gordon Fraser, Rui Abreu, Michael D. Ernst, Deric Pang, and Benjamin Keller",
+    "pdf_link": "/fault-localization-icse2017.pdf"
+  }
+]

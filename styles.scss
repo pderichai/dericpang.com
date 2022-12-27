@@ -1,0 +1,260 @@
+// Responsive widths.
+body {
+  margin: 7rem auto 3rem;
+  max-width: 61.25rem;
+}
+
+@media (max-width: 64.25em) {
+  body {
+    margin: 3rem 1.5rem 3rem;
+  }
+}
+
+// Typography.
+$inter: "Inter", sans-serif;
+$jetbrains_mono: "JetBrains Mono", monospace;
+$font__weight: 400;
+$font__line-height: 1.5;
+
+// Colors.
+$color__black_text: rgba(0, 0, 0, 0.87);
+$color__gray: #696969;
+$color__white: #ffffff;
+
+// Elements.
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $color__black_text;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color__gray;
+  }
+}
+
+// Layout.
+body {
+  background: $color__white;
+  color: $color__black_text;
+  font-family: $inter;
+  font-weight: $font__weight;
+  line-height: $font__line-height;
+}
+
+.site-header {
+  font-family: $inter;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+nav {
+  margin-bottom: 1.5rem;
+}
+
+nav ul {
+  margin: 0;
+}
+
+nav li {
+  margin-right: 1.5rem;
+  font-size: 1.25rem;
+  font-family: $jetbrains_mono;
+  display: inline;
+}
+
+@media (max-width: 64.25em) {
+  nav li {
+    display: list-item;
+  }
+}
+
+.active {
+  font-weight: 700;
+}
+
+nav,
+.social-links {
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.about {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-text-first {
+  margin-top: 0;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image-img {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 64.25em) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-image {
+    order: -1;
+    width: 20rem;
+  }
+}
+
+.social-links {
+  margin-top: 1.5rem;
+}
+
+// Publications component.
+.publications {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.publications li {
+  margin-bottom: 1rem;
+}
+
+.publications p {
+  margin: 0;
+}
+
+.publications a + a {
+  margin-left: 0.5rem;
+}
+
+// Projects component.
+.projects {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.projects li {
+  margin-bottom: 1rem;
+}
+
+.projects p {
+  margin: 0;
+}
+
+.projects a + a {
+  margin-left: 0.5rem;
+}
+
+// Blog post template.
+h3.post {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 2rem;
+}
+
+h3.post:before {
+  content: counter(h3counter) "\0000a0\0000a0";
+  counter-increment: h3counter;
+  counter-reset: h4counter;
+}
+
+h4.post {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+h4.post:before {
+  content: counter(h3counter) "." counter(h4counter) "\0000a0\0000a0";
+  counter-increment: h4counter;
+}
+
+pre.post {
+  border-style: solid;
+  border-color: #d3d3d3;
+  border-width: 0.06rem;
+  border-radius: 0.5rem;
+  overflow: auto;
+  padding: 0.5rem;
+  background-color: #f2f2f2;
+  code {
+    font-family: $jetbrains_mono;
+  }
+}
+
+// Formatting code blocks in the posts.
+// TODO: For some reason, passing a custom code component into MDXProvider
+// doesn't work.
+.post:not(pre) code {
+  border-style: solid;
+  border-color: #d3d3d3;
+  border-width: 0.06rem;
+  border-radius: 0.5rem;
+  overflow: auto;
+  padding: 0.1rem;
+  background-color: #f2f2f2;
+  font-family: $jetbrains_mono;
+}
+
+ol.post {
+  padding-left: 1.5rem;
+}
+
+img.post {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.post-title {
+  counter-reset: h3counter;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.post-date {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.last-updated-date {
+  font-style: italic;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.post-featured-image {
+  border-radius: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.post-featured-image-img {
+  border-radius: 0.5rem;
+}

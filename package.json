@@ -4,56 +4,35 @@
   "description": "Deric's Homepage",
   "version": "1.0.0",
   "author": "Deric Pang <pderichai@gmail.com>",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
-    "esm": "^3.2.25",
-    "gatsby": "^4.11.2",
-    "gatsby-plugin-google-analytics": "^4.11.0",
-    "gatsby-plugin-image": "^2.11.1",
-    "gatsby-plugin-manifest": "^4.11.1",
-    "gatsby-plugin-mdx": "^3.11.1",
-    "gatsby-plugin-offline": "^5.11.1",
-    "gatsby-plugin-react-helmet": "^5.11.0",
-    "gatsby-plugin-sass": "^5.11.1",
-    "gatsby-plugin-sharp": "^4.11.1",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-remark-copy-linked-files": "^5.11.0",
-    "gatsby-remark-gifs": "^1.1.0",
-    "gatsby-remark-images": "^6.11.1",
-    "gatsby-remark-katex": "^6.11.0",
-    "gatsby-source-filesystem": "^4.11.1",
-    "gatsby-transformer-remark": "^5.11.1",
-    "gatsby-transformer-sharp": "^4.11.0",
-    "gatsby-transformer-yaml": "^4.11.0",
-    "katex": "^0.13.24",
-    "postcss": "^8.4.12",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "remark-html-katex": "^4.0.1",
-    "remark-math": "^5.1.1",
-    "sass": "^1.50.0"
+    "date-fns": "latest",
+    "gray-matter": "latest",
+    "next": "latest",
+    "next-mdx-remote": "^3.0.8",
+    "prop-types": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rehype-img-size": "latest",
+    "swr": "latest"
+  },
+  "overrides": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
-    "prettier": "^2.6.2"
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "gh-pages": "latest",
+    "prettier": "latest",
+    "sass": "latest"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build && gh-pages -d public -b master"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pderichai/pderichai.github.io"
