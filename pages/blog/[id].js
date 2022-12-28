@@ -1,4 +1,5 @@
 import path from "path";
+import Head from "next/head";
 import Image from "next/image";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
@@ -6,7 +7,6 @@ import rehypeImgSize from "rehype-img-size";
 import rehypeKatex from "rehype-katex";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import Head from "next/head";
 
 import Layout from "../../components/layout";
 import Date from "../../components/date";
