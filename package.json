@@ -14,16 +14,15 @@
     "date-fns": "latest",
     "gray-matter": "latest",
     "next": "latest",
-    "next-mdx-remote": "^3.0.8",
+    "next-mdx-remote": "latest",
     "prop-types": "latest",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "latest",
+    "react-dom": "latest",
     "rehype-img-size": "latest",
+    "rehype-katex": "latest",
+    "remark-gfm": "latest",
+    "remark-math": "latest",
     "swr": "latest"
-  },
-  "overrides": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "eslint": "latest",
