@@ -1,19 +1,17 @@
 import React from "react";
-import useSWR from "swr";
 
 import Layout from "../components/layout";
+import { readJsonData } from "../lib/data";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+export async function getStaticProps() {
+  // Read the publications JSON file.
+  const publicationsData = await readJsonData("publications.json");
 
-function PublicationsPage() {
-  const { data, error, isLoading } = useSWR("/api/publications-data", fetcher);
+  return { props: { publicationsData } };
+}
 
-  // Handle the error state.
-  if (error) return <div>Failed to load publications data.</div>;
-  // Handle the loading state.
-  if (isLoading) return <div>Loading...</div>;
-
-  const publications = JSON.parse(data);
+function PublicationsPage({ publicationsData }) {
+  const publications = JSON.parse(publicationsData);
 
   return (
     <Layout title="Publications">

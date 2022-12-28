@@ -1,19 +1,17 @@
 import React from "react";
-import useSWR from "swr";
 
 import Layout from "../components/layout";
+import { readJsonData } from "../lib/data";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+export async function getStaticProps() {
+  // Read the projects JSON file.
+  const projectsData = await readJsonData("projects.json");
 
-function ProjectsPage() {
-  const { data, error, isLoading } = useSWR("/api/projects-data", fetcher);
+  return { props: { projectsData } };
+}
 
-  // Handle the error state.
-  if (error) return <div>Failed to load projects data.</div>;
-  // Handle the loading state.
-  if (isLoading) return <div>Loading...</div>;
-
-  const projects = JSON.parse(data);
+function ProjectsPage({ projectsData }) {
+  const projects = JSON.parse(projectsData);
 
   return (
     <Layout title="Projects">
