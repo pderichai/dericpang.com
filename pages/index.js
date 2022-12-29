@@ -2,14 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Layout from "../components/layout";
-import headshotImage from "../public/headshot.png";
 
 function HomePage() {
   return (
     <Layout>
       <div className="about">
         <div className="about-text">
-          <div>
+          <div className="about-blurb">
             <p className="about-text-first">
               I&apos;m a senior software engineer at Google working on semantic
               parsing and question answering for Google Search.
@@ -56,14 +55,6 @@ function HomePage() {
               </li>
             </ul>
           </div>
-        </div>
-        <div className="about-image">
-          <Image
-            src={headshotImage}
-            alt="Headshot of Deric"
-            className="about-image-img"
-            priority
-          />
         </div>
       </div>
     </Layout>

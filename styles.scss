@@ -71,6 +71,10 @@ nav li {
 }
 
 @media (max-width: 64.25em) {
+  nav {
+    margin-bottom: 2.5rem;
+  }
+
   nav li {
     display: list-item;
     margin-bottom: 0.5rem;
@@ -116,6 +120,12 @@ nav,
 
 .about-text {
   flex: 2;
+}
+
+@media (max-width: 64.26em) {
+  .about-blurb {
+    margin-bottom: 2.5rem;
+  }
 }
 
 .about-text-first {
